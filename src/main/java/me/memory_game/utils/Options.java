@@ -44,7 +44,7 @@ public class Options {
 	}
 
 	public void init() {
-		File file = new File("options.dat");
+		File file = new File(System.getenv("APPDATA") + "\\Memory Game\\options.dat");
 		BufferedReader br;
 
 		try {
@@ -94,7 +94,7 @@ public class Options {
 
 	private void write() {
 		try {
-			FileWriter fw = new FileWriter("options.dat", false);
+			FileWriter fw = new FileWriter(System.getenv("APPDATA") + "\\Memory Game\\options.dat", false);
 			fw.append(background.getFills().get(0).getFill().toString()).append("\n")
 					.append(Integer.toString(transitionLength)).append("\n")
 					.append(transitionType).append("\n")

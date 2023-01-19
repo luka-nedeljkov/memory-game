@@ -4,8 +4,6 @@ out/
 !**/src/main/**/target/
 !**/src/test/**/target/
 /src/main/resources/META-INF/
-*.dat
-*.db
 
 ### IntelliJ IDEA ###
 .idea/

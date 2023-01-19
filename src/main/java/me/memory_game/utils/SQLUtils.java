@@ -1,5 +1,7 @@
 package me.memory_game.utils;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -55,7 +57,7 @@ public class SQLUtils {
 
 	public void insert(String name) {
 		try {
-			connection.createStatement().execute("insert into players values ('\" + name + \"', 0);");
+			connection.createStatement().execute("insert into players values ('" + name + "', 0)");
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -70,9 +72,11 @@ public class SQLUtils {
 	}
 
 	public Connection connect() {
+		File file = new File(System.getenv("APPDATA") + "\\Memory Game");
 		Connection connection;
 		try {
-			connection = DriverManager.getConnection("jdbc:sqlite:save.db");
+			file.mkdir();
+			connection = DriverManager.getConnection("jdbc:sqlite:" + System.getenv("APPDATA") + "\\Memory Game\\save.db");
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
