@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.memory_game.ui.controllers.OptionsController">
+   <children>
+      <GridPane prefHeight="75.0" prefWidth="300.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="75.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Player 1: ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="Player 2: " GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="player1select" prefWidth="150.0" GridPane.columnIndex="1" />
+            <ChoiceBox fx:id="player2select" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#newPlayer" text="New" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" onAction="#newPlayer" text="New" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <AnchorPane prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Button layoutX="100.0" layoutY="10.0" mnemonicParsing="false" onAction="#start" prefHeight="30.0" prefWidth="100.0" text="Start" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
